@@ -1,0 +1,68 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { GithubLogo } from "radix-svelte-icons";
+
+import Highlight from "svelte-highlight";
+import typescript from "svelte-highlight/languages/typescript";
+
+const code = `
+.SYNTAX HELLO_WORLD
+
+HELLO_WORLD = "Hello, World!"
+
+.END
+`;
+---
+
+<Layout title="Meta Compiler Language">
+	<div class="hero min-h-[80vh] bg-base-100 w-full">
+		<div class="hero-content text-center flex-col">
+			<div>
+				<h1 class="text-8xl font-extrabold">METALS</h1>
+				<p>
+					Language specification for the META intermediate language.
+				</p>
+			</div>
+			<div class="flex flex-row gap-4">
+				<a
+					class="btn btn-outline btn-lg no-underline"
+					href="https://github.com/the-meta-lang/metals"
+					target="_blank"><GithubLogo size={24} />View on GitHub</a
+				>
+				<a href="/docs/metals" class="btn btn-primary btn-lg no-underline"
+					>Learn More!</a
+				>
+			</div>
+		</div>
+	</div>
+	<div class="hero min-h-[80vh] bg-base-200 w-full">
+		<div class="hero-content flex flex-col lg:flex-row gap-12 w-4/5">
+			<div class="w-2/3">
+				<h2>Fast</h2>
+				<p>
+					Meta was built for speed! It's implementation is written
+					directly in Assembly and optimized to make the most of it.
+				</p>
+			</div>
+			<div class="mockup-code w-full">
+				<Highlight language={typescript} code={code} />
+			</div>
+		</div>
+	</div>
+	<div class="hero min-h-[80vh] bg-base-100 w-full">
+		<div
+			class="hero-content flex flex-col lg:flex-row-reverse gap-12 w-4/5"
+		>
+			<div class="w-2/3">
+				<h2>Extensible</h2>
+				<p>
+					META is written using... META... It's a Metacompiler and
+					will do anything you throw at it.
+				</p>
+			</div>
+			<div class="mockup-code w-full">
+				<Highlight language={typescript} code={code} />
+			</div>
+		</div>
+	</div>
+</Layout>
